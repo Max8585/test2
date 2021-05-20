@@ -50,6 +50,33 @@ public class GoogleTest {
 
     }
 
+
+    @Test
+    public void test2() {
+        driver.get("http://google.com");
+        driver.findElement(By.cssSelector("input.gLFyf.gsfi")).sendKeys("Калькулятор", Keys.ENTER);
+        WebElement element = driver.findElement(By.xpath(".//div[text()='6']"));element.click();
+        WebElement elementq = driver.findElement(By.xpath(".//div[text()='÷']"));elementq.click();
+        WebElement elemento = driver.findElement(By.xpath(".//div[text()='0']"));elemento.click();
+        WebElement elements = driver.findElement(By.xpath(".//div[text()='=']"));elements.click();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebElement elementj = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div.fB3vD")));
+
+
+    }
+
+
+    @Test
+    public void test3() {
+        driver.get("http://google.com");
+        driver.findElement(By.cssSelector("input.gLFyf.gsfi")).sendKeys("Калькулятор", Keys.ENTER);
+        WebElement element = driver.findElement(By.xpath(".//div[text()='sin']"));element.click();
+        WebElement elements = driver.findElement(By.xpath(".//div[text()='=']"));elements.click();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebElement elementl = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div.fB3vD")));
+
+
+    }
     @AfterAll
     public static void teardown(){
         driver.quit();
